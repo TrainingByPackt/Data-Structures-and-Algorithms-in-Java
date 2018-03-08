@@ -20,7 +20,7 @@ public class ActivitySelection {
     public List<Activity> select(List<Activity> activities) {
         List<Activity> selected = new ArrayList<>();
         List<Activity> sortedActivities = new ArrayList<>(activities);
-        Collections.sort(sortedActivities, (o1, o2) -> o1.finish < o2.finish ? -1 : o1.finish > o2.finish ? 1 : 0);
+        Collections.sort(sortedActivities, (o1, o2) -> Integer.signum(o1.finish - o2.finish));
         if (sortedActivities.size() > 0)
             selected.add(sortedActivities.get(0));
         for (int i = 1; i < sortedActivities.size(); i++)
