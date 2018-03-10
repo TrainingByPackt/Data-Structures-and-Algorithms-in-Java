@@ -1,6 +1,5 @@
 package com.packt.datastructuresandalg.lesson4.huffman;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
