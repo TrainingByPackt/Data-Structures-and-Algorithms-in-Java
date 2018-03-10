@@ -1,6 +1,5 @@
-package com.pactk.datastructuresandalg.lesson4.activity.egyptian;
+package com.packt.datastructuresandalg.lesson4.activity.egyptian;
 
-import com.packt.datastructuresandalg.lesson4.activity.egyptian.EgyptianFractions;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
