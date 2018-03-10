@@ -16,7 +16,7 @@ public class EgyptianFractions {
 
         Long n = denominator / numerator + 1;
         List<Long> r = build(numerator * n - denominator, denominator * n);
-        r.add(n);
+        r.add(0, n);
         return r;
     }
 
