@@ -32,7 +32,7 @@ public class MaximumSubarray {
         }
     }
 
-    public int maxSubarray(int[] a) {
+    public Integer maxSubarray(int[] a) {
         return maxSubarrayAux(a, 0, a.length - 1);
     }
 
