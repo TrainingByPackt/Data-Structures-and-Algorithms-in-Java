@@ -1,7 +1,7 @@
 package com.packt.datastructuresandalg.lesson4.activity.coinchange.solution;
 
 public class CoinChange {
-    public int ways(int N, int[] coins) {
+    public Integer ways(int N, int[] coins) {
         int[][] dp = new int[N + 1][coins.length + 1];
         for (int j = 0; j <= coins.length; j++)
             dp[0][j] = 1;
