@@ -45,7 +45,8 @@ public class ClosestPairOfPoints {
         Collections.sort(sortedPoints, (o1, o2) -> Integer.signum(o1.y - o2.y));
 
         for (int i = 0; i < points.size(); i++) {
-            for (int j = i + 1; j < points.size() && (points.get(j).y - points.get(i).y) < best.distance(); j++) {
+            for (int j = i + 1; j < points.size() &&
+                    (points.get(j).y - points.get(i).y) < best.distance(); j++) {
                 PointPair candidate = new PointPair(points.get(i), points.get(j));
                 if (candidate.distance() < best.distance())
                     best = candidate;
@@ -63,8 +64,8 @@ public class ClosestPairOfPoints {
         int mid = N / 2;
         Point midPoint = points.get(mid);
 
-        PointPair bl = divideAndConquer(points.subList(0, mid));
-        PointPair br = divideAndConquer(points.subList(mid, N));
+        PointPair bl = divideAndConquerAux(points.subList(0, mid));
+        PointPair br = divideAndConquerAux(points.subList(mid, N));
 
         PointPair bestSoFar = bl;
         if (br.distance() < bl.distance())
