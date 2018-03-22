@@ -4,11 +4,15 @@ import java.util.Optional;
 
 public class LinkedListNode<V> {
     private V value;
-    private Optional<LinkedListNode<V>> next;
+    private LinkedListNode<V> next;
 
-    public LinkedListNode(V value, Optional<LinkedListNode<V>> next) {
+    public LinkedListNode(V value, LinkedListNode<V> next) {
         this.value = value;
         this.next = next;
+    }
+
+    public Optional<LinkedListNode<V>> getNext() {
+        return Optional.ofNullable(next);
     }
 
     public V getValue() {
@@ -20,12 +24,15 @@ public class LinkedListNode<V> {
         return this;
     }
 
-    public Optional<LinkedListNode<V>> getNext() {
-        return next;
-    }
-
-    public LinkedListNode setNext(Optional<LinkedListNode<V>> next) {
+    public LinkedListNode setNext(LinkedListNode<V> next) {
         this.next = next;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedListNode{" +
+                "value=" + value +
+                '}';
     }
 }

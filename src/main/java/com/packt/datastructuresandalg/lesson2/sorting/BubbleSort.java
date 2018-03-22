@@ -2,7 +2,7 @@ package com.packt.datastructuresandalg.lesson2.sorting;
 
 import java.util.Arrays;
 
-public class BobbleSort {
+public class BubbleSort {
 
     public void sort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
@@ -48,7 +48,7 @@ public class BobbleSort {
     }
 
     public static void main(String[] args) {
-        BobbleSort bubbleSort = new BobbleSort();
+        BubbleSort bubbleSort = new BubbleSort();
         int[] numbers = new int[]{2, 5, 7, 2, 4, 2, 8, 1, 0};
         int[] numbers1 = new int[]{2, 5, 7, 2, 4, 2, 8, 1, 0};
         int[] numbers2 = new int[]{2, 5, 7, 2, 4, 2, 8, 1, 0};

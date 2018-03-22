@@ -4,15 +4,23 @@ import java.util.Optional;
 
 public class DblLinkedListNode<V> {
     private V value;
-    private Optional<DblLinkedListNode<V>> next;
-    private Optional<DblLinkedListNode<V>> previous;
+    private DblLinkedListNode<V> next;
+    private DblLinkedListNode<V> previous;
 
     public DblLinkedListNode(V value,
-                             Optional<DblLinkedListNode<V>> next,
-                             Optional<DblLinkedListNode<V>> previous) {
+                             DblLinkedListNode<V> next,
+                             DblLinkedListNode<V> previous) {
         this.value = value;
         this.next = next;
         this.previous = previous;
+    }
+
+    public Optional<DblLinkedListNode<V>> getNext() {
+        return Optional.ofNullable(next);
+    }
+
+    public Optional<DblLinkedListNode<V>> getPrevious() {
+        return Optional.ofNullable(previous);
     }
 
     public V getValue() {
@@ -24,12 +32,14 @@ public class DblLinkedListNode<V> {
         return this;
     }
 
-    public Optional<DblLinkedListNode<V>> getNext() {
-        return next;
+    public DblLinkedListNode setNext(DblLinkedListNode<V> next) {
+        this.next = next;
+        return this;
     }
 
-    public DblLinkedListNode setNext(Optional<DblLinkedListNode<V>> next) {
-        this.next = next;
+
+    public DblLinkedListNode setPrevious(DblLinkedListNode<V> previous) {
+        this.previous = previous;
         return this;
     }
 }
