@@ -1,9 +1,6 @@
 package com.packt.datastructuresandalg.lesson4.activity.coinchange;
 
-import com.packt.datastructuresandalg.lesson4.activity.coinchange.solution.CoinChange;
 import junit.framework.TestCase;
-
-import java.util.Arrays;
 
 public class CoinChangeTest extends TestCase {
     CoinChange change = new CoinChange();
