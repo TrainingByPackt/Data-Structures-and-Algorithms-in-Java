@@ -9,15 +9,15 @@ public class BadCharacterRule {
         int m = P.length();
 
         int e = 256;
-        int right[][] = new int[m][e];
+        int left[][] = new int[m][e];
         for (int i = 0; i < m; i++)
             for (int j = 0; j < e; j++)
-                right[i][j] = -1;
+                left[i][j] = -1;
         for (int i = 0; i < m; i++) {
             if (i != 0)
                 for (int j = 0; j < e; j++)
-                    right[i][j] = right[i - 1][j];
-            right[i][P.charAt(i)] = i;
+                    left[i][j] = left[i - 1][j];
+            left[i][P.charAt(i)] = i;
         }
 
         List<Integer> shifts = new ArrayList<>();
@@ -26,7 +26,7 @@ public class BadCharacterRule {
             skip = 0;
             for (int j = m - 1; j >= 0; j--) {
                 if (P.charAt(j) != T.charAt(i + j)) {
-                    skip = Math.max(1, j - right[j][T.charAt(i + j)]);
+                    skip = Math.max(1, j - left[j][T.charAt(i + j)]);
                     break;
                 }
             }
