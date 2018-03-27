@@ -1,12 +1,12 @@
 package com.packt.datastructuresandalg.lesson1.intersection;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleIntersection {
 
     public List<Integer> intersection(int[] a, int[] b) {
-        List<Integer> result = new LinkedList<>();
+        List<Integer> result = new ArrayList<>(a.length);
         for (int x : a) {
             for (int y : b) {
                 if (x == y) result.add(x);
