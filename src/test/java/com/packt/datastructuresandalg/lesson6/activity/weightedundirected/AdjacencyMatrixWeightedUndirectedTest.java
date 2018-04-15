@@ -2,9 +2,6 @@ package com.packt.datastructuresandalg.lesson6.activity.weightedundirected;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class AdjacencyMatrixWeightedUndirectedTest extends TestCase {
     public void test1() {
         AdjacencyMatrixWeightedUndirected g = new AdjacencyMatrixWeightedUndirected(5);
