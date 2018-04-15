@@ -8,8 +8,7 @@ public class AdjacencyMatrixWeightedUndirected {
     }
 
     public void addEdge(int u, int v, int weight) {
-        this.adj[u][v] = weight;
-        this.adj[v][u] = weight;
+        this.adj[u][v] = this.adj[v][u] = weight;
     }
 
     public int edgeWeight(int u, int v) {
