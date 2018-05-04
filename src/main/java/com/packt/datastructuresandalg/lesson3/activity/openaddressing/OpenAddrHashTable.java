@@ -18,6 +18,9 @@ public class OpenAddrHashTable<K, V> implements HashTable<K, V> {
     public void put(K key, V value) {
     }
 
+    public void remove(K key) {
+    }
+
     public Optional<V> get(K key) {
         return Optional.empty();
     }

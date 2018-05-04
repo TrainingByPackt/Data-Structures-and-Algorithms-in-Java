@@ -34,6 +34,26 @@ public class OpenAddrHashTableTest extends TestCase {
         assertEquals(Optional.of("Test6"), hashTable.get(6));
     }
 
+    public void testGetItemAfterRemove() {
+        OpenAddrHashTable<Integer, String> hashTable = new OpenAddrHashTable<>(10, new RemainderHashing());
+        hashTable.put(5, "Test5");
+        hashTable.put(15, "Test15");
+        hashTable.put(6, "Test6");
+        hashTable.remove(6);
+        assertEquals(Optional.empty(), hashTable.get(6));
+    }
+
+    public void testInsertItemAfterRemove() {
+        OpenAddrHashTable<Integer, String> hashTable = new OpenAddrHashTable<>(10, new RemainderHashing());
+        hashTable.put(5, "Test5");
+        hashTable.put(15, "Test15");
+        hashTable.put(6, "Test6");
+        hashTable.remove(6);
+        hashTable.put(25, "Test25");
+        assertEquals(Optional.of("Test25"), hashTable.get(25));
+    }
+
+
     public void testItemWrapsAroundHashTable() {
         OpenAddrHashTable<Integer, String> hashTable = new OpenAddrHashTable<>(10, new RemainderHashing());
         hashTable.put(8, "Test8");
@@ -54,6 +74,24 @@ public class OpenAddrHashTableTest extends TestCase {
         assertEquals(Optional.of("Test0"), hashTable.get(0));
         assertEquals(Optional.empty(), hashTable.get(58));
     }
+
+    public void testRemoveItemWrapsAroundHashTable() {
+        OpenAddrHashTable<Integer, String> hashTable = new OpenAddrHashTable<>(10, new RemainderHashing());
+        hashTable.put(8, "Test8");
+        hashTable.put(18, "Test18");
+        hashTable.put(28, "Test28");
+        hashTable.put(38, "Test38");
+        hashTable.put(48, "Test48");
+        hashTable.put(9, "Test9");
+        hashTable.put(19, "Test19");
+        hashTable.put(0, "Test0");
+        hashTable.remove(9);
+        hashTable.put(58, "Test58");
+        assertEquals(Optional.empty(), hashTable.get(9));
+        assertEquals(Optional.of("Test0"), hashTable.get(0));
+        assertEquals(Optional.of("Test58"), hashTable.get(58));
+    }
+
 
     public void testSearchItemOnFullHashTable() {
         OpenAddrHashTable<Integer, String> hashTable = new OpenAddrHashTable<>(10, new RemainderHashing());

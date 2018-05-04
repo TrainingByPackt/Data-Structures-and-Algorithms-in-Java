@@ -26,6 +26,11 @@ public class ChainedHashTable<K, V> implements HashTable<K, V> {
                 .map(Pair::getValue);
     }
 
+    public void remove(K key) {
+        int hashValue = hashProvider.hashKey(key, array.length);
+        array[hashValue].removeIf(p -> p.getKey().equals(key));
+    }
+
     public static void main(String args[]) {
         ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(10, new RemainderHashing());
         chainedHashTable.put(12,"Isabel");
@@ -42,5 +47,7 @@ public class ChainedHashTable<K, V> implements HashTable<K, V> {
         System.out.println(chainedHashTable.get(31));
         System.out.println(chainedHashTable.get(42));
         System.out.println(chainedHashTable.get(45));
+        chainedHashTable.remove(31);
+        System.out.println(chainedHashTable.get(31));
     }
 }
