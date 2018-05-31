@@ -22,4 +22,12 @@ public class FastInterstectionSol1 {
     private void mergeSort(int[] input) {
         Arrays.sort(input);
     }
+
+    public static void main(String[] args) {
+        int[] numbers1 = new int[]{66, 24, 75, 22, 12, 87};
+        int[] numbers2 = new int[]{32, 41, 98, 66, 39, 24};
+
+        List<Integer> result = new FastInterstectionSol1().intersectionFast(numbers1, numbers2);
+        System.out.println(result);
+    }
 }
