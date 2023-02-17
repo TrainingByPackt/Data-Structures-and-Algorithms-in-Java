@@ -3,7 +3,7 @@ package com.packt.datastructuresandalg.lesson2.sorting;
 
 public class BinarySearchRecursive {
     public boolean binarySearch(int x, int[] sortedNumbers) {
-        return binarySearch(x, sortedNumbers, 0, sortedNumbers.length);
+        return binarySearch(x, sortedNumbers, 0, sortedNumbers.length - 1);
     }
 
     public boolean binarySearch(int x, int[] sortedNumbers, int start, int end) {
