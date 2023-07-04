@@ -12,7 +12,7 @@ public class ArraySearch {
 
     public static void main(String[] args) {
         ArraySearch arraySearch = new ArraySearch();
-        System.out.println(arraySearch.search("Alien",
+        System.out.println(arraySearch.search("Aliens",
                 new String[]{"Interstellar", "District 9", "Blade Runner", "Alien", "Minority Report", "Primer"}));
     }
 }
